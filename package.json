@@ -13,8 +13,8 @@
   "main": "./extension.js",
   "contributes": {
     "commands": [{
-      "command": "timer.helloWorld",
-      "title": "Hello World"
+      "command": "Focus.Timer",
+      "title": "Focus"
     }]
   },
   "scripts": {
