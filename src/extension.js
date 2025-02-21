@@ -76,7 +76,7 @@ async function startTimer(duration, statusBar) {
       timerInterval = null;
       statusBar.text = "✅ Time's up!";
       vscode.window.showInformationMessage(
-        "Pomodoro session complete! 🎉 Take a break."
+        "Take a break."
       );
       showBreakScreen();
       focus_history.push({

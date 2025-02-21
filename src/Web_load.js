@@ -4,12 +4,14 @@ function getBreakScreenHTML(history) {
     <html>
     <head>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <style>
             * {
                 margin: 0;
                 padding: 0;
                 font-family: Arial, sans-serif;
                 text-decoration: none;
+               
             }
 
             .main-container {
@@ -20,7 +22,7 @@ function getBreakScreenHTML(history) {
                 align-items: center;
                 flex-direction: row;
                 gap: 30px;
-                background-color: #FF8D29;
+                  background-color: #FF8D29;
             }
 
             .clock-container {
@@ -32,7 +34,7 @@ function getBreakScreenHTML(history) {
                 align-items: center;
                 font-size: 2rem;
                 font-weight: bold;
-                border-radius: 12px;
+                border-radius: 50%;
                 background-color: #fff;
                 box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
                 position: relative;
@@ -45,32 +47,27 @@ function getBreakScreenHTML(history) {
             }
 
             .control-button {
-                padding: 10px 20px;
+                padding: 20px 20px;
                 font-size: 16px;
-                font-weight: bold;
                 border: none;
-                border-radius: 8px;
                 color: white;
                 cursor: pointer;
-                transition: 0.3s;
             }
 
             .pause-button {
-                background-color: #FF4500;
+                background-color: orange;
+                border-radius:50%;
             }
-
-            .pause-button:hover {
-                background-color: #E63900;
+            .pause-button:hover{
+                background-color:#F36E15;
             }
-
             .play-button {
-                background-color: #28A745;
+                background-color: yellow;
+                border-radius:50%;
             }
-
-            .play-button:hover {
-                background-color: #218838;
+            .play-button:hover{
+                background-color:#FEFF73;
             }
-
             .chart-container {
                 width: 400px;
                 height: 400px;
@@ -87,16 +84,19 @@ function getBreakScreenHTML(history) {
     </head>
 
     <body>
+    <h1 style="text-align:center;color:white; font-size:22px;">Break Time with Progress Graph</h1>
         <main class="main-container">
-            <section class="clock-container">
+           <section class="clock-container">
+                 <h1 style="text-align:center;color:orange;">Break Timer</h1>
                 <div class="Timer" id="Timer">5:00</div>
                 <div class="control-buttons">
-                    <button class="control-button pause-button" onclick="pauseTimer()">Pause</button>
-                    <button class="control-button play-button" onclick="playTimer()">Play</button>
+                    <button class="control-button pause-button" onclick="pauseTimer()"><i class="fa-solid fa-play"></i></button>
+                    <button class="control-button play-button" onclick="playTimer()"><i class="fa-solid fa-pause"></i></button>
                 </div>
             </section>
 
             <section class="chart-container">
+             <h1 style="text-align:center;color:orange; font-size:22px;">Focus Graph</h1>
                 <canvas id="focusChart"></canvas>
             </section>
         </main>
@@ -153,7 +153,7 @@ function getBreakScreenHTML(history) {
                     datasets: [{
                         label: 'Focus Duration (minutes)',
                         data: durations,
-                        backgroundColor: ['#FF8D29', '#FBAC5B', '#FFD700', '#FFA500', '#FF4500'],
+                       backgroundColor: ['#FF8D29', '#FFC285', '#FBAC5B', '#FFD3A1', '#FFD700', '#FFF4A3', '#FFA500', '#FFCF80', '#FF4500', '#FF9870'],
                         borderWidth: 1
                     }]
                 },
