@@ -10,12 +10,20 @@
     "Other"
   ],
   "activationEvents": [],
-  "main": "./extension.js",
+  "main": "./src/extension.js",
   "contributes": {
     "commands": [{
       "command": "Focus.Timer",
       "title": "Focus"
-    }]
+    },{
+      "command": "Focus.Pause",
+      "title": "Pause the time"
+    },{
+      "command": "Focus.Tasks",
+      "title": "To do List"
+    }
+  
+  ]
   },
   "scripts": {
     "lint": "eslint .",
