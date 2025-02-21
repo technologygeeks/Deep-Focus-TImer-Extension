@@ -1,65 +1,84 @@
-# timer README
+# Focus Timer - Stay Productive in VS Code ⏳  
 
-This is the README for your extension "timer". After writing up a brief description, we recommend including the following sections.
-
-## Features
-
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+Boost your focus and productivity with the **Focus Timer** extension!  
+Set up Pomodoro-style focus sessions, track your work time, and get reminders to take breaks—all within VS Code.  
 
 ---
 
-## Working with Markdown
+## Features 🚀  
 
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+✅ **Set Focus Timers** (25, 45, 60 minutes, or custom) directly in VS Code  
+✅ **Pause & Resume** the timer anytime  
+✅ **Track Focus History** for better time management  
+✅ **Break Reminder** with a dedicated webview screen  
+✅ **Status Bar Integration** to show countdown progress  
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
+### 📸 Screenshots  
+\!\[Focus Timer in Status Bar\]\(images/status-bar.png\)  
+\!\[Break Reminder Webview\]\(images/break-screen.png\)  
 
-## For more information
+---
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+## Installation 🛠️  
 
-**Enjoy!**
+1. Open **VS Code**  
+2. Go to **Extensions (`Ctrl+Shift+X`)**  
+3. Search for **Focus Timer**  
+4. Click **Install**  
+5. Start focusing! 🎯  
+
+---
+
+## Usage 🎯  
+
+1. Open Command Palette (`Ctrl+Shift+P`)  
+2. Type **"Focus Timer"** and select it  
+3. Choose a focus duration  
+4. Watch the timer in the **status bar**  
+5. When time's up, take a break!  
+
+---
+
+## Extension Settings ⚙️  
+
+This extension currently does not require additional settings.  
+
+---
+
+## Known Issues 🐞  
+
+- Webview may not close automatically in some cases.  
+- Planned feature: Custom break durations.  
+
+If you find any bugs, please report them [here](https://github.com/your-repo/issues).  
+
+---
+
+## Release Notes 📢  
+
+### 1.0.0  
+- Initial release with focus timers and break reminders.  
+
+### 1.1.0  
+- Added **pause & resume** functionality.  
+
+---
+
+## Contributing 💡  
+
+We welcome contributions! Feel free to fork this repo and submit PRs.  
+
+---
+
+## License 📜  
+
+MIT License © [Your Name]  
+
+---
+
+## For More Information  
+
+- [Visual Studio Code Extension Guide](https://code.visualstudio.com/api/get-started/extension-anatomy)  
+- [Markdown Syntax Guide](https://www.markdownguide.org/basic-syntax/)  
+
+**Enjoy your focused coding! 🚀**  
