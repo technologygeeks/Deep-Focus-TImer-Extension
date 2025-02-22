@@ -50,7 +50,6 @@ function getTimeOptions() {
     { label: "60 minutes (Extended Session)", duration: 60 },
   ];
 }
-
 function startTimer(duration, statusBar) {
   if (duration === "custom") {
     const input = vscode.window.showInputBox({

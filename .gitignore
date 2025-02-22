@@ -33,3 +33,6 @@ coverage/
 dist/
 out/
 *.js.map
+
+
+images/DeepFocus-Timer.gif

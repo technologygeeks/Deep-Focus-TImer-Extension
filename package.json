@@ -2,9 +2,14 @@
   "name": "DeepFocus-Timer",
   "displayName": "DeepFocus-Timer",
   "description": "A Focus Timer extension for Visual Studio Code that helps you stay productive using Pomodoro and Deep Work sessions. It features customizable focus durations, a pause/play function, automatic break reminders, and a session history tracker to monitor your progress.",
+  "publisher":"Deep-Focus-Timer",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.97.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/technologygeeks/Focus-TImer-Extension"
   },
   "categories": [
     "Other"
@@ -12,18 +17,20 @@
   "activationEvents": [],
   "main": "./src/extension.js",
   "contributes": {
-    "commands": [{
-      "command": "Focus.Timer",
-      "title": "DeepFocus-Timer: Start"
-    },{
-      "command": "Focus.Pause",
-      "title": "DeepFocus-Timer: Pause"
-    },{
-      "command": "Focus.Play",
-      "title": "DeepFocus-Timer: Play"
-    }
-  
-  ]
+    "commands": [
+      {
+        "command": "Focus.Timer",
+        "title": "DeepFocus-Timer: Start"
+      },
+      {
+        "command": "Focus.Pause",
+        "title": "DeepFocus-Timer: Pause"
+      },
+      {
+        "command": "Focus.Play",
+        "title": "DeepFocus-Timer: Play"
+      }
+    ]
   },
   "scripts": {
     "lint": "eslint .",
