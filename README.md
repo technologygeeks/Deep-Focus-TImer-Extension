@@ -14,7 +14,7 @@ Set up Pomodoro-style focus sessions, track your work time, and get reminders to
 ✅ **Status Bar Integration** to show countdown progress  
 
 ### 📸 Screenshots  
-![Focus Timer in Status Bar](/images/status-bar.png)  
+![Focus Timer in Status Bar](/images/common-view.png)  
 ![Options Menu](/images/options-view.png)  
 ![Timer Display](/images/timer-display.png)  
 ![Break Reminder (No Progress Graph)](/images/break-no-progress.png)  
