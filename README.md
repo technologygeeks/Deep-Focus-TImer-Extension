@@ -15,7 +15,7 @@ Set up Pomodoro-style focus sessions, track your work time, and get reminders to
 
 ### DeepFocus-Timer
   
-![Description of DeepFocus-Timer](/images/DeepFocus-Timer.gif)
+![Description of DeepFocus-Timer](./images/DeepFocus-Timer.gif)
 
 ---
 
@@ -72,7 +72,7 @@ We welcome contributions! Feel free to fork this repo and submit PRs.
 
 ## License 📜  
 
-MIT License © [Your Name]  
+MIT License © DeepFocus-Timer  
 
 ---
 
