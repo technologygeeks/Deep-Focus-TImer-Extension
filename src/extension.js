@@ -111,8 +111,6 @@ function togglePause(statusBar) {
     isPaused ? "⏸️ Timer Paused!" : "▶️ Timer Resumed!"
   );
 }
-
-// Updated function to pass break duration
 function showBreakScreen(breakDuration) {
   const panel = vscode.window.createWebviewPanel(
     "breakScreen",
@@ -127,7 +125,7 @@ function showBreakScreen(breakDuration) {
     if (panel) {
       panel.dispose();
     }
-  }, breakDuration * 1000); // Convert minutes to milliseconds
+  }, breakDuration * 1000); 
 
   panel.onDidDispose(() => {
     clearTimeout(closeTimeout);

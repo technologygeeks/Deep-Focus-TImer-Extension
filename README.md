@@ -32,7 +32,7 @@ Set up Pomodoro-style focus sessions, track your work time, and get reminders to
 ## Usage 🎯  
 
 1. Open Command Palette (`Ctrl+Shift+P`)  
-2. Type **"Focus Timer"** and select it  
+2. Type **"DeepFocus-Timer"** and select it  
 3. Choose a focus duration  
 4. Watch the timer in the **status bar**  
 5. When time's up, take a break!  
