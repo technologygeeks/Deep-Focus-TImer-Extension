@@ -13,7 +13,8 @@ Set up Pomodoro-style focus sessions, track your work time, and get reminders to
 ✅ **Break Reminder** with a dedicated webview screen  
 ✅ **Status Bar Integration** to show countdown progress  
 
-### 📸 Screenshots  
+### DeepFocus-Timer
+  
 ![Description of DeepFocus-Timer](/images/DeepFocus-Timer.gif)
 
 ---
