@@ -1,5 +1,14 @@
-function getBreakScreenHTML(history) {
-    console.log(history);
+function getBreakScreenHTML(history,duration) {
+    let time;
+   if(duration>=1 && duration<5){
+    time=1;
+   }else if(duration>=5 && duration<25){
+    time=5;
+   }else if(duration>=25 && duration<45){
+    time=7;
+   }else{
+    time=10;
+   }
     return `
     <html>
     <head>
@@ -84,11 +93,10 @@ function getBreakScreenHTML(history) {
     </head>
 
     <body>
-    <h1 style="text-align:center;color:white; font-size:22px;">Break Time with Progress Graph</h1>
-        <main class="main-container">
+       <main class="main-container">
            <section class="clock-container">
                  <h1 style="text-align:center;color:orange;">Break Timer</h1>
-                <div class="Timer" id="Timer">5:00</div>
+                <div class="Timer" id="Timer">${time}:00</div>
                 <div class="control-buttons">
                     <button class="control-button pause-button" onclick="pauseTimer()"><i class="fa-solid fa-play"></i></button>
                     <button class="control-button play-button" onclick="playTimer()"><i class="fa-solid fa-pause"></i></button>
@@ -102,7 +110,8 @@ function getBreakScreenHTML(history) {
         </main>
 
         <script>
-            let countdown = 300; // 5 minutes
+            let countdown =${time}*60;
+            console.log(countdown)
             let timer;
             let isPaused = false;
 
@@ -125,14 +134,12 @@ function getBreakScreenHTML(history) {
             function pauseTimer() {
                 isPaused = true;
                 clearInterval(timer);
-                console.log("pause"); // Command to pause
             }
 
             function playTimer() {
                 if (isPaused) {
                     isPaused = false;
                     startTimer();
-                    console.log("play"); // Command to play
                 }
             }
 

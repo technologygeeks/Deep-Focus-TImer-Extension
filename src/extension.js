@@ -6,6 +6,7 @@ let timerInterval = null;
 let countdown = 0;
 let isPaused = false;
 const focus_history = [];
+
 function activate(context) {
   const statusBar = vscode.window.createStatusBarItem(
     vscode.StatusBarAlignment.Right,
@@ -31,28 +32,28 @@ function activate(context) {
     startTimer(selected.duration * 60, statusBar);
   });
 
-  let pauseCommand = vscode.commands.registerCommand(
-    "Focus.Pause",
-    function () {
-      togglePause(statusBar);
-    }
-  );
+  let pauseCommand = vscode.commands.registerCommand("Focus.Pause", function () {
+    togglePause(statusBar);
+  });
+  let playCommand = vscode.commands.registerCommand("Focus.Play", function () {
+    togglePause(statusBar);
+  });
 
-  context.subscriptions.push(disposable, pauseCommand);
+  context.subscriptions.push(disposable, pauseCommand, playCommand);
 }
 
 function getTimeOptions() {
   return [
-    { label: "Testing the Extension", duration: 0.1 },
+    { label: "Demo", duration: 1 },
     { label: "25 minutes (Pomodoro)", duration: 25 },
     { label: "45 minutes (Deep Work)", duration: 45 },
     { label: "60 minutes (Extended Session)", duration: 60 },
   ];
 }
 
-async function startTimer(duration, statusBar) {
+function startTimer(duration, statusBar) {
   if (duration === "custom") {
-    const input = await vscode.window.showInputBox({
+    const input = vscode.window.showInputBox({
       prompt: "Enter focus duration in minutes",
     });
     duration = parseInt(input) * 60;
@@ -75,19 +76,26 @@ async function startTimer(duration, statusBar) {
       clearInterval(timerInterval);
       timerInterval = null;
       statusBar.text = "✅ Time's up!";
-      vscode.window.showInformationMessage(
-        "Take a break."
-      );
-      showBreakScreen();
+      vscode.window.showInformationMessage("Take a break.");
+
+      const breakDuration = getBreakDuration(duration / 60);
+      showBreakScreen(breakDuration);
+
       focus_history.push({
         date: new Date().toISOString(),
         duration: duration / 60,
       });
-      // console.log(focus_history);
     } else {
       statusBar.text = `⏳ Time left: ${formatTime(countdown)}`;
     }
   }, 1000);
+}
+
+function getBreakDuration(focusDuration) {
+  if (focusDuration <= 1) return 1 * 60; 
+  if (focusDuration <= 25) return 5 * 60; 
+  if (focusDuration <= 45) return 7 * 60; 
+  return 10 * 60; 
 }
 
 function togglePause(statusBar) {
@@ -95,23 +103,36 @@ function togglePause(statusBar) {
     return vscode.window.showWarningMessage("No timer is running!");
 
   isPaused = !isPaused;
+
   statusBar.text = isPaused
-    ? "⏸️ Timer Paused"
-    : `⏳ Time left: ${formatTime(countdown)}`;
+    ? "⏸️ Timer Paused (Click to Play ▶️)"
+    : `▶️ Timer Running: ${formatTime(countdown)}`;
+
   vscode.window.showInformationMessage(
-    isPaused ? "Timer Paused!" : "Timer Resumed!"
+    isPaused ? "⏸️ Timer Paused!" : "▶️ Timer Resumed!"
   );
 }
 
-function showBreakScreen() {
+// Updated function to pass break duration
+function showBreakScreen(breakDuration) {
   const panel = vscode.window.createWebviewPanel(
     "breakScreen",
     "Take a Break! ⏳",
     vscode.ViewColumn.One,
     { enableScripts: true }
   );
-  panel.webview.html = getBreakScreenHTML(focus_history);
-  setTimeout(() => panel.dispose(), 5 * 60 * 1000);
+
+  panel.webview.html = getBreakScreenHTML(focus_history, breakDuration / 60);
+
+  const closeTimeout = setTimeout(() => {
+    if (panel) {
+      panel.dispose();
+    }
+  }, breakDuration * 1000); // Convert minutes to milliseconds
+
+  panel.onDidDispose(() => {
+    clearTimeout(closeTimeout);
+  });
 }
 
 function deactivate() {

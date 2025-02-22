@@ -14,13 +14,13 @@
   "contributes": {
     "commands": [{
       "command": "Focus.Timer",
-      "title": "Focus"
+      "title": "DeepFocus-Timer: Start"
     },{
       "command": "Focus.Pause",
-      "title": "Pause the time"
+      "title": "DeepFocus-Timer: Pause"
     },{
-      "command": "Focus.Tasks",
-      "title": "To do List"
+      "command": "Focus.Play",
+      "title": "DeepFocus-Timer: Play"
     }
   
   ]
