@@ -76,6 +76,12 @@ MIT License © DeepFocus-Timer
 
 ---
 
+## Developed By 
+
+Mohammed Thaha 
+
+---
+
 ## For More Information  
 
 - [Visual Studio Code Extension Guide](https://code.visualstudio.com/api/get-started/extension-anatomy)  

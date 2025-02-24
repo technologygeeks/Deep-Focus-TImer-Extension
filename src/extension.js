@@ -6,7 +6,6 @@ let timerInterval = null;
 let countdown = 0;
 let isPaused = false;
 const focus_history = [];
-
 function activate(context) {
   const statusBar = vscode.window.createStatusBarItem(
     vscode.StatusBarAlignment.Right,
