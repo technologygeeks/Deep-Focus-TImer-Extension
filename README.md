@@ -56,10 +56,10 @@ If you find any bugs, please report them [here](https://github.com/your-repo/iss
 
 ## Release Notes 📢  
 
-### 1.0.0  
+### 0.0.60  
 - Initial release with focus timers and break reminders.  
 
-### 1.1.0  
+### 0.0.61
 - Added **pause & resume** functionality.  
 
 ---
